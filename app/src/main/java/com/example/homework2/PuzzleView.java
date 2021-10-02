@@ -24,7 +24,8 @@ public class PuzzleView implements View.OnClickListener {
     public TextView[] textViewArray;
 
 
-    public PuzzleView(Activity mainActivity){
+    public PuzzleView(Activity mainActivity)
+    {
         this.activity = mainActivity;
         puzzelInfo = new PuzzleModel();
         //Make a array full of textViews so changing the text can be a bit more simpler
@@ -61,10 +62,12 @@ public class PuzzleView implements View.OnClickListener {
         //Getting the appropriate numbers from the puzzlemodel array
         //Then editing to the textView as well as changing the size
         //This is to set the initial numbers in the textView
-        for(int i = 0; i < numbers.size();i++){
+        for(int i = 0; i < numbers.size();i++)
+        {
             puzzelInfo.tileNum[i] = numbers.get(i);
         }
-        for(int i = 0; i < numbers.size();i++){
+        for(int i = 0; i < numbers.size();i++)
+        {
             textViewArray[i].setTextSize(50);
             textViewArray[i].setText(puzzelInfo.tileNum[i]);
         }
@@ -75,17 +78,20 @@ public class PuzzleView implements View.OnClickListener {
     }
     //Onclick for the reset button to reshuffle the array and edit the
     //textView to show the updated numbers
-    public void onClick(View view) {
+    public void onClick(View view)
+    {
         List<String> numbers = Arrays.asList("", "1", "2", "3", "4", "5", "6", "7",
                 "8", "9", "10", "11", "12", "13", "14", "15");
 
         Collections.shuffle(numbers);
 
-        for (int i = 0; i < numbers.size(); i++) {
+        for (int i = 0; i < numbers.size(); i++)
+        {
             puzzelInfo.tileNum[i] = numbers.get(i);
         }
         //Setting the numbers for the textViews
-        for (int i = 0; i < numbers.size(); i++) {
+        for (int i = 0; i < numbers.size(); i++)
+        {
             textViewArray[i].setTextSize(50);
             textViewArray[i].setText(puzzelInfo.tileNum[i]);
         }
